@@ -1,9 +1,13 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        res = []
-        for i in range(0, len(nums)-1):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    res.extend([i, j])
-        return res
+        
+        num_dict = {}
+        
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_dict:
+                return [num_dict[complement],i]
+            num_dict[num] = i
+                
+# O(n)
         
