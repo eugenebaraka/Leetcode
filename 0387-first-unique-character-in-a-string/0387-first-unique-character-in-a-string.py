@@ -8,8 +8,8 @@ class Solution:
             
         uniquechars = {k:v for k, v in counts.items() if v == 1}
         
-        if uniquechars:
+        if len(uniquechars) > 0:
             first_char = next(iter(uniquechars.keys()))
             return s.index(first_char)
-        else:
-            return -1
+        
+        return -1
